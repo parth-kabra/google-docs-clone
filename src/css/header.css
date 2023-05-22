@@ -1,0 +1,141 @@
+.logo{
+    width:40px
+}
+
+.main__header{
+    padding: .5em;
+}
+
+.header{
+    position: relative;
+    background-color: white;
+}
+
+.doc__info{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.doc__name{
+    border-radius: 6px;
+    margin-left: 10px;
+    font-family: "Noto Sans";
+    font-size: var(--normal-font-size);
+    border: none;
+    width: 155px;
+    padding: 2px;
+    background-color: transparent;
+    transition: .2s;
+}
+
+.doc__edit > span > i{
+    margin-right: 10px;
+    font-size: large;
+    cursor: pointer;
+}
+
+.doc__edit > span{
+    display: flex;
+    align-items: center;
+}
+
+.doc__name:hover{
+    border: 1px solid rgb(180, 180, 180);
+}
+
+.doc__name:focus{
+    outline: 2px solid blue
+}
+
+.share__doc{
+    display: flex;
+    border-radius: 50px;
+    align-items: center;
+    font-size: var(--normal-font-size);
+    margin-right: 10px;
+    padding-bottom: 7px !important;
+}
+
+.share__doc > p{
+    margin-top: -5px;
+    transition: .2s;
+}
+
+.share__doc > img{
+    width: 20px;
+    margin-bottom: 5px;
+    margin-right: 5px;
+}
+
+.user{
+    display: flex;
+    width: 50%;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.avatar{
+    width: 50px;
+    border-radius: 50%;
+}
+
+.options{
+    display: flex;
+    width: 50%;
+}
+
+.user > i{
+    margin-right: 10px;
+    color: rgb(70, 64, 64);
+    font-size: 28px;
+}
+
+.doc__edit{
+    position: absolute;
+    left: 50px;
+}
+
+.option{
+    margin: 10px;
+    padding: 3px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.option:hover{
+    border-radius: 5px;
+    background-color: #e6e6e6;
+}
+
+@media screen and (max-width:805px) {
+    .options {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow: hidden;
+    }
+}
+
+@media screen and (max-width:603px) {
+    .user > i{
+        display: none;
+    }
+}
+
+@media screen and (max-width:488px) {
+    .options{
+        display: none;
+    }
+
+    .doc__edit{
+        top: 10px;
+    }
+}
+
+@media screen and (max-width:462px) {
+    .share__doc > p{
+        display: none !important;
+    }
+}
+
