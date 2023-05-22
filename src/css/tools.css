@@ -1,0 +1,102 @@
+.tools{
+    width: 90%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: #edf2fa;
+    border-radius: 30px;
+    margin-bottom: 5px;
+}
+
+.tools__main{
+    width:100%;
+    background-color: white;
+    display:flex;
+    justify-content: center;
+}
+
+.tools > i, .bx-align-left, .bx-align-middle, .bx-align-right, .bx-align-justify{
+    padding: 2px;
+    border-radius: 5px;
+    cursor: pointer;
+    color: rgb(60, 60, 60);
+    transition: .2s;
+    font-size: 23px !important;
+}
+
+.tools > i:hover{
+    background-color:#e6e6e6;
+}
+
+
+.sep{
+    border-left: 1px solid #d5d5d6;
+    margin-left: 10px !important;
+}
+
+.selector__indicator-separator{
+    display: none;
+}
+
+.selector__placeholder {
+    color: black !important;
+    font-family: "Noto Sans";
+    font-size: 14px;
+}
+
+.selector__indicator > svg{
+    fill: rgb(8, 12, 24) !important;  
+}
+
+@media screen and (max-width:955px) {
+    .tools{
+        width: 100%;
+        border-radius: 2px;
+    }
+}
+.more{
+    display: none;
+}
+
+@media screen and (max-width:851px) {
+    .more{
+        display: block;
+    }
+
+    .list_{
+        display: none;
+    }
+
+}
+@media screen and (max-width:678px) {
+    .singh{
+        display: none;
+    }
+}
+@media screen and (max-width:796px) {
+    .hero{
+        display: none;
+    }
+
+    .gep{
+        display: none;
+    }
+}
+
+@media screen and (max-width:480px) {
+    .options{
+        display: none !important;
+    }
+}
+
+@media screen and (max-width:440px) {
+    .avatar{
+        display: none;
+    }
+    .share__doc{
+        margin-right: 0px;
+    }
+}
+
