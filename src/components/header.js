@@ -16,6 +16,11 @@ function generateRandomText(length) {
 		return randomText;
 }
 
+async function shortenUrl(longurl){
+	const response = await fetch(`https://tinyurl.com/api-create.php?url=${encodeURIComponent(longurl)}`)
+	return await response.text()
+}
+
 const CryptoJS = require('crypto-js');
 
 function stringToHex(str) {
@@ -83,18 +88,23 @@ export default function Header() {
 	// List of options in the header
 	const options = ["File", "Edit", "View", "Insert", "Format", "Tools", "Extensions", "Help"];
 
+
 	function generateDocument(){
 		const element = document.getElementById("editor")
 		const html = element.innerHTML
 		const encryption = encryptText(html, encryptionKey)
 		const link =`${window.location.href}document/${encryption}`
-		navigator.clipboard.writeText(link)
-		.then(() => {
-			console.log("Text copied successfully!");
+		shortenUrl(link).then((url)=>{
+			console.log(url)
+			navigator.clipboard.writeText(url)
+			.then(() => {
+				console.log("Text copied successfully!");
+			})
+			.catch((error) => {
+				console.error("Unable to copy text: ", error);
+			});
+	
 		})
-		.catch((error) => {
-			console.error("Unable to copy text: ", error);
-		});
 
 		document.getElementById("share__p").innerText = "Copied"
 		setTimeout(()=>{
