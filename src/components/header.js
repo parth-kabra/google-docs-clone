@@ -4,25 +4,29 @@ import Share from "../img/svg/share.svg";
 import "../css/header.css";
 import Editor from "./editor";
 
+
+// Function to generate random text of a given length
 function generateRandomText(length) {
-		const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-		let randomText = '';
-	
-		for (let i = 0; i < length; i++) {
-			const randomIndex = Math.floor(Math.random() * characters.length);
-			randomText += characters.charAt(randomIndex);
-		}
-	
-		return randomText;
+	const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+	let randomText = '';
+
+	for (let i = 0; i < length; i++) {
+		const randomIndex = Math.floor(Math.random() * characters.length);
+		randomText += characters.charAt(randomIndex);
+	}
+
+	return randomText;
 }
 
-async function shortenUrl(longurl){
-	const response = await fetch(`https://tinyurl.com/api-create.php?url=${encodeURIComponent(longurl)}`)
-	return await response.text()
+// Function to shorten a given URL using the TinyURL API
+async function shortenUrl(longurl) {
+	const response = await fetch(`https://tinyurl.com/api-create.php?url=${encodeURIComponent(longurl)}`);
+	return await response.text();
 }
 
 const CryptoJS = require('crypto-js');
 
+// Function to convert a string to its hexadecimal representation
 function stringToHex(str) {
 	let hex = '';
 	for (let i = 0; i < str.length; i++) {
@@ -30,6 +34,8 @@ function stringToHex(str) {
 	}
 	return hex;
 }
+
+// Function to encrypt text using AES encryption with a given key
 function encryptText(text, key) {
 	const keyWordArray = CryptoJS.enc.Utf8.parse(key);
 	const encryptedText = CryptoJS.AES.encrypt(text, keyWordArray, {
@@ -41,7 +47,6 @@ function encryptText(text, key) {
 
 	return encryptedHex;
 }
-
 
 const encryptionKey = 'SecretKey123';
 

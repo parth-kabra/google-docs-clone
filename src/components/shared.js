@@ -7,24 +7,28 @@ import { useParams } from 'react-router-dom';
 import Header from "./header";
 const CryptoJS = require('crypto-js');
 
+// Function to convert a hexadecimal string to its corresponding string representation
 function hexToString(hex) {
-    let str = '';
-    for (let i = 0; i < hex.length; i += 2) {
-        str += String.fromCharCode(parseInt(hex.substr(i, 2), 16));
-    }
-    return str;
+	let str = '';
+	for (let i = 0; i < hex.length; i += 2) {
+		str += String.fromCharCode(parseInt(hex.substr(i, 2), 16));
+	}
+	return str;
 }
 
+// Function to decrypt text using AES decryption with a given key
 function decryptText(encryptedText, key) {
-    const keyWordArray = CryptoJS.enc.Utf8.parse(key);
-    const encryptedString = hexToString(encryptedText);
-    const decryptedText = CryptoJS.AES.decrypt(encryptedString, keyWordArray, {
-        mode: CryptoJS.mode.ECB,
-        padding: CryptoJS.pad.Pkcs7
-    });
-    return decryptedText.toString(CryptoJS.enc.Utf8);
+	const keyWordArray = CryptoJS.enc.Utf8.parse(key);
+	const encryptedString = hexToString(encryptedText);
+	const decryptedText = CryptoJS.AES.decrypt(encryptedString, keyWordArray, {
+		mode: CryptoJS.mode.ECB,
+		padding: CryptoJS.pad.Pkcs7
+	});
+	return decryptedText.toString(CryptoJS.enc.Utf8);
 }
+
 const encryptionKey = 'SecretKey123';
+
 
 const EncryptedContentDisplay = () => {
     const {content} = useParams();
