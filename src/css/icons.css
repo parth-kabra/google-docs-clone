@@ -12,3 +12,10 @@
     flex-direction: column;
     right: 10px;
 }
+
+
+@media screen and (max-width:571px) {
+    .google__icons{
+        display: none;
+    }
+}
