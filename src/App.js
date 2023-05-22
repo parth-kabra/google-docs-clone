@@ -17,8 +17,8 @@ const ViewOnlyDocument = <>
 function App() {
 	return (
 		<Routes>
-			<Route path='/' element={<Editor/>} />
-			<Route path="/document/:content" element={<ViewOnlyDocument />} />
+			<Route path='/' element={Editor} />
+			<Route path="/document/:content" element={ViewOnlyDocument} />
 	  	</Routes>
 	);
 }
