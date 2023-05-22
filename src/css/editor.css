@@ -1,0 +1,89 @@
+.text__editor{
+    width: 100%;
+    height: auto;
+    display: flex;
+    background-color: #ededed;
+    min-height: 100vh;
+    max-width: auto;
+    justify-content: center;
+    padding: 1em;
+}
+
+.editor{
+    width: 70%;
+    height: auto;
+    font-family: "Arial";
+    padding: 2em;
+    border: 1px solid #ccc;
+    background-color: white;
+}
+
+.editor > div{
+    margin-bottom: 8px;
+    outline: none;
+    font-size: 11px;
+}
+
+.linktag{
+    color: #44bee6;
+    text-decoration: underline;
+}
+
+.block{
+    max-width: 100%;
+}
+
+.bx-highlight{
+    color: rgba(255, 234, 1, 0.833) !important;
+}
+
+.color{
+    padding-top: 0px;
+    padding-left: 10px;
+    padding-right: 13px;
+    padding-bottom: 0px;
+}
+
+.black{
+    background-color: black;
+}
+
+.red{
+    background-color: red;
+}
+
+.yellow{
+    background-color: yellow;
+}
+
+.blue{
+    background-color: blue;
+}
+
+.green{
+    background-color: green;
+}
+
+.orange{
+    background-color: orange;
+}
+
+.bx-font-color{
+    font-size: large;
+}
+
+@media screen and (max-width:949px) {
+    .editor{
+        width: 90%;
+    }
+}
+
+@media screen and (max-width:513px) {
+    .editor{
+        width: 100%;
+    }
+}
+
+#share__doc_copy{
+    cursor:not-allowed;
+}
