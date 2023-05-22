@@ -1,38 +1,124 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Verdana:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Impact:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Georgia:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Helvetica:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+	margin: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+:root {
+	--header-height: 5rem;
+	--font-semi: 600;
+	--font-bold: 700;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+:root {
+	--white-color:white;
+	--dark-color:#101214;
+	--grayishBlue: hsl(229, 6%, 66%);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+:root {
+	--body-font: 'Noto Sans', sans-serif; 
+	--big-font-size: 3rem;
+	--h1-font-size: 1.5rem;
+	--title:3rem;
+	--about-title:2rem;
+	--h2-font-size: 1.25rem;
+	--normal-font-size: .938rem;
+	--small-font-size: .75rem;
 }
 
-.App-link {
-  color: #61dafb;
+@media screen and (min-width: 768px) {
+	:root {
+	--big-font-size: 6rem;
+	--h1-font-size: 2.25rem;
+	--h2-font-size: 1.5rem;
+	--title:5rem;
+	--about-title:3rem;
+	--normal-font-size: 1rem;
+	--small-font-size: .813rem;
+	}	
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+:root {
+	--mb-1: .5rem;
+	--mb-2: 1rem;
+	--mb-3: 1.5rem;
+	--mb-4: 2rem;
+}
+
+:root {
+	--z-tooltip: 10;
+	--z-fixed: 100;
+}
+
+*,::before,::after{
+	box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+	width: 10px;
+}
+	
+::-webkit-scrollbar-track {
+	background: transparent; 
+}
+	 
+::-webkit-scrollbar-thumb {
+	background: rgb(204, 204, 204); 
+	border-radius: 20px;
+}
+	
+::-webkit-scrollbar-thumb:hover {
+	background: rgb(119, 119, 119); 
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	font-family: var(--body-font);
+	font-size: var(--normal-font-size);
+	background-color: var(--white-color);
+	color: var(--dark-color);
+	line-height: 1.6;
+}
+
+h1,h2,p{
+	margin: 0; 
+}
+
+a{
+	text-decoration: none;
+	color: var(--dark-color);
+}
+
+img{
+	max-width: 100%;
+	height: auto;
+}
+
+.button {
+	background-color: #c2e7ff;
+	border: 1px solid #f8f9fa;
+	color: #3d3d3d;
+	padding: 10px 20px;
+	font-size: large;
+	text-align: center;
+	border-radius: 4px;
+	cursor: pointer;
+	transition: background-color 0.3s;
+}
+  
+.button:hover {
+	background-color: #aad0e9;
 }
