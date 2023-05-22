@@ -1,0 +1,14 @@
+.app__icon{
+    width: 20px;
+    margin-bottom: 30px !important;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.google__icons{
+    position: absolute;
+    top: 130px;
+    display: flex;
+    flex-direction: column;
+    right: 10px;
+}
