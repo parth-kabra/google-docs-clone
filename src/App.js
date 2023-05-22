@@ -1,25 +1,26 @@
-import logo from './logo.svg';
 import './App.css';
+import Header from './components/header';
+import Icons from './components/icons';
+import EncryptedContentDisplay from './components/shared';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+
+const Editor = <>
+	<Header />
+	<Icons />
+</>
+
+const ViewOnlyDocument = <>
+    <EncryptedContentDisplay />
+    <Icons />
+</>
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	return (
+		<Routes>
+			<Route path='/' element={<Editor/>} />
+			<Route path="/document/:content" element={<ViewOnlyDocument />} />
+	  	</Routes>
+	);
 }
 
 export default App;
